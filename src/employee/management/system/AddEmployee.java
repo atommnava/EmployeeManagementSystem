@@ -1,13 +1,12 @@
 package employee.management.system;
 
+// Bibliotecas
 import com.toedter.calendar.JDateChooser;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
-import java.sql.*;
 
 public class AddEmployee extends JFrame implements ActionListener {
     JTextField tName, tLname, tAddress, tPhone, tCurp, tEmail, tSalary, tDesignation;
@@ -160,10 +159,6 @@ public class AddEmployee extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    public static void main(String[] args) {
-        new AddEmployee();
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == add) {
@@ -189,8 +184,12 @@ public class AddEmployee extends JFrame implements ActionListener {
                 e1.printStackTrace();
             }
 
-        } else if (e.getSource() == back) {
-
+        } else {
+            setVisible(false);
+            new Main();
         }
+    }
+    public static void main(String[] args) {
+        new AddEmployee();
     }
 }
