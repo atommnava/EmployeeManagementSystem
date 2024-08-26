@@ -6,8 +6,26 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/*
+ * @brief La clase Main representa el escritorio para un empleador a quien se le asignará la tarea de llevar la
+ *        gestión de empleados de una organización especifica. Para ingresar al sistema de empleados, el empleador
+ *        debera ingersar sus credenciales (para mayor seguridad).
+ *        Un sistema de gestión de empleados cuenta con multiples
+ *        funcionalidades, como son:
+ *        1. Agregar empleado
+ *        2. Remover empleado
+ *        3. Ver empleados
+ *        Nota: La parte Swing ya esta integrada.
+ * @author Atom Alexander M. Nava
+ * @date 26/08/24
+ */
 public class Main extends JFrame {
 
+    /*
+     * @brief Constructor 'Main' para integrar el diseño de la ventana con la librería swing
+     * @author Atom Alexander M. Nava
+     * @date 26/08/24
+     */
     Main()
     {
         ImageIcon i1 = new ImageIcon(ClassLoader.getSystemResource("icons/home.jpg"));
@@ -72,6 +90,10 @@ public class Main extends JFrame {
         setLayout(null);
         setVisible(true);
     }
+    /* @brief Método principal para ejecutar el programa principal
+     * @author Atom Alexander M. Nava
+     * @date 26/08/24
+     */
     public static void main(String[] args) {
         new Main();
     }
