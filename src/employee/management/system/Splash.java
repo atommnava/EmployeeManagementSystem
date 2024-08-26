@@ -1,10 +1,20 @@
-
 package employee.management.system;
 
+// Bibliotecas
 import javax.swing.*;
 import java.awt.*;
 
+/* @brief Parte swing integrada para la trnasición de una imagen .gif hacia la clase 'Login', se reedirigira
+          al empleador a una siguientr ventana.
+ * @author Atom Alexander M. Nava
+ * @dater 26/08/24
+ */
 public class Splash extends JFrame {
+    /* @brief Constructor 'Splash' para el diseño de la ventana con la imagen en la que cinco segundos
+              despues se cerrara esta ventana para abrir la que sera para la entrada de datos.
+     * @author Atom Alexander M. Nava
+     * @dater 26/08/24
+     */
     Splash()
     {
         ImageIcon image1 = new ImageIcon(ClassLoader.getSystemResource("icons/front.gif"));
@@ -27,6 +37,10 @@ public class Splash extends JFrame {
             e.printStackTrace();
         }
     }
+    /* @brief Método principal para ejcutar la parte swing de la clase 'Splash'
+     * @author Atom Alexander M. Nava
+     * @dater 26/08/24
+     */
     public static void main(String[] args) {
         new Splash();
     }
