@@ -8,10 +8,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
+/*
+ * @brief Clase 'ViewEmployee' despliega en un frame la información más actualizada de nuestra listo de empleados con
+ *        los datos de los mismos. Implementa la interfaz 'ActionListener' para funciones adicionales que sirven para ver
+ *        a un empleado especifico, imprimir la lista de los empleados insertados en la base de datos, y actualizar los
+ *        datos de un empleado con información desactualizada o equivocada.
+ * @author Atom Alexander M. Nava
+ * @date 27/08/24
+ */
 public class ViewEmployee extends JFrame implements ActionListener {
+    // Variables
     Choice employeeChoice;
     JTable table;
     JButton searchbtn, print, update, back;
+    /*
+     * @brief Clase Constructor 'ViewEmployee' para el diseño del frame en donde se visualizara los campos de
+     *        cada empleado, respectivamente.
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     ViewEmployee() {
         getContentPane().setBackground(new Color(255,131,122));
         JLabel search = new JLabel("Search by employee ID");
@@ -70,6 +85,11 @@ public class ViewEmployee extends JFrame implements ActionListener {
         setLocation(300,100);
         setVisible(true);
     }
+    /*
+     * @brief Método para a las accciones que realize el empleador.
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == searchbtn) {
@@ -95,7 +115,11 @@ public class ViewEmployee extends JFrame implements ActionListener {
             new Main();
         }
     }
-
+    /*
+     * @brief Método principal para ejecutar la funcionalidad principal de la clase 'ViewEmployee'
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     public static void main(String[] args) {
         new ViewEmployee();
     }
