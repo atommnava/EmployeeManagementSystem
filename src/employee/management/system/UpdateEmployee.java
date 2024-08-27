@@ -1,20 +1,30 @@
 package employee.management.system;
 
-
-import com.toedter.calendar.JDateChooser;
-
+// Bibliotecas
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 
+/*
+ * @brief Clase 'UpdateEmployee' es una funcionalidad adiocional implementada a la clase 'ViewEmployee' que anteriormente se menciono
+ *               que esta ayuda al empleador a visualizar de una manera transparente los datos de todos los emepleados. Esta clase
+ *               le permite al empleador actualizar los datos de un empleado en caso de que contenga información desactulizada o corrompida.
+ * @author Atom Alexander M. Nava
+ * @date 27/08/24
+ */
 public class UpdateEmployee extends JFrame implements ActionListener {
-
+    // Variables
     JTextField tEducation, tLname, tAddress, tPhone, tCurp, tEmail, tSalary, tDesignation;
     JLabel tEmpId;
     JButton update, back;
     String number;
+    /*
+     * @brief Constructor 'UpdateEmployee' que integra la parte swing y el diseño del frame para la actulización de los datos.
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     UpdateEmployee(String number) {
         this.number = number;
         getContentPane().setBackground(new Color(163,255,188));
@@ -178,6 +188,11 @@ public class UpdateEmployee extends JFrame implements ActionListener {
         setLocation(300,50);
         setVisible(true);
     }
+    /*
+     * @brief Método para actualizar la información de nuestra base de datos 'employeemanagementsystem'.
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == update) {
@@ -205,6 +220,11 @@ public class UpdateEmployee extends JFrame implements ActionListener {
             new ViewEmployee();
         }
     }
+    /*
+     * @brief Método principal para ejecutar la funcionalidad principal de la clase 'UpdateEmployee'
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     public static void main(String[] args) {
         new UpdateEmployee("");
     }
