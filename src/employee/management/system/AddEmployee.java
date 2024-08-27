@@ -8,14 +8,29 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+/*
+ * @brief Clase 'AddEmployee' conecta nuestra base de datos en MySQL para añadir un nuevo nodo (empleado) con los datos
+ *              personales del empleado, como nombre, fecha de nacimiento o su cargo.
+ * @author Atom Alexander M. Nava
+ * @date 27/08/24
+ */
 public class AddEmployee extends JFrame implements ActionListener {
+    // Variables
     JTextField tName, tLname, tAddress, tPhone, tCurp, tEmail, tSalary, tDesignation;
     JLabel tEmpId;
     JDateChooser tDob;
     JComboBox boxEducation;
     Random ran = new Random();
     JButton add, back;
+
+    // Genera un número aleatorio para representar el ID del empleado
     int number = ran.nextInt(999999);
+    /*
+     * @brief Constructor para 'AddEmploye' que integra la parte gráfica swing e implementa la interfaz
+     *        'ActionListener' para pulsar el botón 'Next' para que esta actualice nuestra lista de empleados.
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     AddEmployee() {
         getContentPane().setBackground(new Color(163,255,188));
 
@@ -116,7 +131,7 @@ public class AddEmployee extends JFrame implements ActionListener {
         tCurp.setBackground(new Color(177,252,197));
         add(tCurp);
 
-        JLabel empId = new JLabel("Employee ID::");
+        JLabel empId = new JLabel("Employee ID:");
         empId.setBounds(50,400,150,30);
         empId.setFont(new Font("SAN_SERIF", Font.BOLD, 20));
         add(empId);
@@ -158,7 +173,11 @@ public class AddEmployee extends JFrame implements ActionListener {
         setLocation(300,50);
         setVisible(true);
     }
-
+    /*
+     * @brief Método para actualizar nuestra base de datos con los nuevos empleados que se van integrando
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == add) {
@@ -189,6 +208,11 @@ public class AddEmployee extends JFrame implements ActionListener {
             new Main();
         }
     }
+    /*
+     * @brief Método principal para ejecutar la funcionalidad principal de la clase 'AddEmployee'
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     public static void main(String[] args) {
         new AddEmployee();
     }
