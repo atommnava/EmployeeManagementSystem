@@ -1,5 +1,6 @@
 package employee.management.system;
 
+// Bibliotecas
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -8,9 +9,22 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.ResultSet;
 
+/*
+ * @brief Clase 'AddEmployee' conecta nuestra base de datos en MySQL para remover un nodo (empleado), borrando así los
+ *              datos del empleado de nuestra lista.
+ * @author Atom Alexander M. Nava
+ * @date 27/08/24
+ */
 public class RemoveEmployee extends JFrame implements ActionListener {
+    // Variables
     Choice employeeChoice;
     JButton remove, back;
+    /*
+     * @brief Constructor 'RemoveEmployee' es para el diseño de nuestra ventana en la que se visualizaran los datos del empleado
+     *        a eliminar, el botón 'Delete' elimina al empleado de nuestra base de datos.
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     RemoveEmployee()
     {
         JLabel label = new JLabel("Employee ID");
@@ -71,6 +85,11 @@ public class RemoveEmployee extends JFrame implements ActionListener {
         } catch (Exception e2) {
             e2.printStackTrace();
         }
+        /*
+         * @brief Método para actualizar la información desplegada en pantalla con los datos del empleado
+         * @author Atom Alexander M. Nava
+         * @date 27/08/24
+         */
         employeeChoice.addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
@@ -122,6 +141,11 @@ public class RemoveEmployee extends JFrame implements ActionListener {
         setLayout(null);
         setVisible(true);
     }
+    /*
+     * @brief Método para actualizar nuestra base de datos. 
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == remove) {
@@ -140,7 +164,11 @@ public class RemoveEmployee extends JFrame implements ActionListener {
             new Main();
         }
     }
-
+    /*
+     * @brief Método principal para ejecutar la funcionalidad principal de la clase 'RemoveEmployee'
+     * @author Atom Alexander M. Nava
+     * @date 27/08/24
+     */
     public static void main(String[] args) {
         new RemoveEmployee();
     }
